@@ -75,6 +75,7 @@ namespace SiliconStepe.ViewModels
                         FirstName = "Юрий",
                         MiddleName = "Дмитриевич",
                         SecondName = "Яровой",
+                        Description = "SEO-эксперт №1 на fl.ru, 10 лет опыта, 190+ отзывов; Whatsapp/Viber/Телеграм ...; Продвигаю сайты по большому количеству запросов Делаю бесплатные SEO мини-аудиты.",
                         Rate = new List<Rate>()
                         {
                             new Rate()
@@ -98,6 +99,7 @@ namespace SiliconStepe.ViewModels
                     new User()
                     {
                         FirstName = "Александр",
+                        Description = "SEO-эксперт №1 на fl.ru, 10 лет опыта, 190+ отзывов; Whatsapp/Viber/Телеграм ...; Продвигаю сайты по большому количеству запросов Делаю бесплатные SEO мини-аудиты.",
                         MiddleName = "Михайлович",
                         SecondName = "Васильев",
                         Rate = new List<Rate>()
@@ -125,6 +127,7 @@ namespace SiliconStepe.ViewModels
                         FirstName = "Виктор",
                         MiddleName = "Вячеславович",
                         SecondName = "Петров",
+                        Description = "SEO-эксперт №1 на fl.ru, 10 лет опыта, 190+ отзывов; Whatsapp/Viber/Телеграм ...; Продвигаю сайты по большому количеству запросов Делаю бесплатные SEO мини-аудиты.",
                         Rate = new List<Rate>()
                         {
                             new Rate()
@@ -148,6 +151,7 @@ namespace SiliconStepe.ViewModels
                     new User()
                     {
                         FirstName = "Иван",
+                        Description = "SEO-эксперт №1 на fl.ru, 10 лет опыта, 190+ отзывов; Whatsapp/Viber/Телеграм ...; Продвигаю сайты по большому количеству запросов Делаю бесплатные SEO мини-аудиты.",
                         MiddleName = "Иванович",
                         SecondName = "Иванов",
                         Rate = new List<Rate>()
@@ -178,6 +182,7 @@ namespace SiliconStepe.ViewModels
                     new User()
                     {
                         FirstName = "Юрий",
+                        Description = "SEO-эксперт №1 на fl.ru, 10 лет опыта, 190+ отзывов; Whatsapp/Viber/Телеграм ...; Продвигаю сайты по большому количеству запросов Делаю бесплатные SEO мини-аудиты.",
                         MiddleName = "Дмитриевич",
                         SecondName = "Яровой",
                         Rate = new List<Rate>()
@@ -204,6 +209,7 @@ namespace SiliconStepe.ViewModels
                     {
                         FirstName = "Александр",
                         MiddleName = "Михайлович",
+                        Description = "SEO-эксперт №1 на fl.ru, 10 лет опыта, 190+ отзывов; Whatsapp/Viber/Телеграм ...; Продвигаю сайты по большому количеству запросов Делаю бесплатные SEO мини-аудиты.",
                         SecondName = "Васильев",
                         Rate = new List<Rate>()
                         {
@@ -228,6 +234,7 @@ namespace SiliconStepe.ViewModels
                     new User()
                     {
                         FirstName = "Виктор",
+                        Description = "SEO-эксперт №1 на fl.ru, 10 лет опыта, 190+ отзывов; Whatsapp/Viber/Телеграм ...; Продвигаю сайты по большому количеству запросов Делаю бесплатные SEO мини-аудиты.",
                         MiddleName = "Вячеславович",
                         SecondName = "Петров",
                         Rate = new List<Rate>()
@@ -254,6 +261,7 @@ namespace SiliconStepe.ViewModels
                     {
                         FirstName = "Иван",
                         MiddleName = "Иванович",
+                        Description = "SEO-эксперт №1 на fl.ru, 10 лет опыта, 190+ отзывов; Whatsapp/Viber/Телеграм ...; Продвигаю сайты по большому количеству запросов Делаю бесплатные SEO мини-аудиты.",
                         SecondName = "Иванов",
                         Rate = new List<Rate>()
                         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SiliconStepe.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,15 @@ namespace SiliconStepe.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class EmployeeView : ContentPage
 	{
-		public EmployeeView ()
+		public EmployeeView (User user)
 		{
-			InitializeComponent ();
+			InitializeComponent();
+            BindingContext = user;
 		}
-	}
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

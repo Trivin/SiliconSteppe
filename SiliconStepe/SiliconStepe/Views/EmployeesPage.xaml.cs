@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using SiliconStepe.Models;
 using SiliconStepe.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -45,9 +46,11 @@ namespace SiliconStepe.Views
             //await Navigation.PushAsync(page);
         }
 
-        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
+            await Navigation.PushAsync(new EmployeeView((sender as ListView).SelectedItem as User) { });
             (sender as ListView).SelectedItem = null;
         }
+
     }
 }

@@ -2,6 +2,7 @@
 using SiliconStepe.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,6 +54,18 @@ namespace SiliconStepe.Views
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
+            ObservableCollection<Doc> documents = new ObservableCollection<Doc>();
+            documents.Add(new Doc() { Name = "Акт обследования ограждения", Uri = new Uri(@"https://drive.google.com/open?id=1bvUJQxgylbnX7eEvbZkSaJqjbqAR89ga") });
+            documents.Add(new Doc() { Name = "Акт опробования АПС(1})", Uri = new Uri(@"https://drive.google.com/open?id=1bvUJQxgylbnX7eEvbZkSaJqjbqAR89ga") });
+            documents.Add(new Doc() { Name = "Акт перекатки пожарных рукавов(1})", Uri = new Uri(@"https://drive.google.com/open?id=1bvUJQxgylbnX7eEvbZkSaJqjbqAR89ga") });
+            documents.Add(new Doc() { Name = "Акт по воздуховодам", Uri = new Uri(@"https://drive.google.com/open?id=1bvUJQxgylbnX7eEvbZkSaJqjbqAR89ga") });
+            documents.Add(new Doc() { Name = "Акт по п-п дверям", Uri = new Uri(@"https://drive.google.com/open?id=1bvUJQxgylbnX7eEvbZkSaJqjbqAR89ga") });
+            documents.Add(new Doc() { Name = "Приказ уборка отходов", Uri = new Uri(@"https://drive.google.com/open?id=1bvUJQxgylbnX7eEvbZkSaJqjbqAR89ga") });
+            documents.Add(new Doc() { Name = "Протокол по лестнице маршевой", Uri = new Uri(@"https://drive.google.com/open?id=1bvUJQxgylbnX7eEvbZkSaJqjbqAR89ga") });
+            documents.Add(new Doc() { Name = "Журнал инструктажей", Uri = new Uri(@"https://drive.google.com/open?id=1bvUJQxgylbnX7eEvbZkSaJqjbqAR89ga") });
+            documents.Add(new Doc() { Name = "Протокол испытаний ПГ", Uri = new Uri(@"https://drive.google.com/open?id=1bvUJQxgylbnX7eEvbZkSaJqjbqAR89ga") });
+            documents.Add(new Doc() { Name = "Журнал учета огнетушителей", Uri = new Uri(@"https://drive.google.com/open?id=1bvUJQxgylbnX7eEvbZkSaJqjbqAR89ga") });
+            Navigation.PushAsync(new DocumentationView(documents) { Title = "Документация организации" });
             (sender as ListView).SelectedItem = null;
         }
     }
