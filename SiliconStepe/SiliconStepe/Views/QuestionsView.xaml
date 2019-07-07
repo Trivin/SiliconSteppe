@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SiliconStepe.Views.QuestionsView">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ListView HasUnevenRows="True" x:Name="MainListView" ItemTapped="MainListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label FontSize="14" Text="{Binding Text}" Style="{DynamicResource MainTextStyle}" Margin="10,5,10,5"/>
+                                <Switch IsToggled="{Binding Answer, Mode=TwoWay}" Grid.Column="1"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Grid.Row="1" Text="Отправить" BackgroundColor="#1FBED6" HorizontalOptions="Fill" TextColor="White" Clicked="Button_Clicked"/>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -3,6 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SiliconStepe.App">
     <Application.Resources>
+        <OnPlatform x:Key="MainFont" x:TypeArguments="Font" iOS="San Francisco" Android="OpenSans-Regular.ttf#OpenSans"/>
 
+        <Color x:Key="MainButtonColor">#1FBED6</Color>
+        <Color x:Key="MainTextColor">#7C7E80</Color>
+        <Color x:Key="MainHeaderColor">#7C7E80</Color>
+        <Color x:Key="MainPageColor">#f0eff4</Color>
+
+        <Style x:Key="MainHeaderStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="{DynamicResource MainHeaderColor}"/>
+        </Style>
+
+        <Style x:Key="MainButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="10,10,10,10"/>
+            <!--<Setter Property="BorderRadius" Value="20"/> -->
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="BackgroundColor" Value="{DynamicResource MainButtonColor}"/>
+        </Style>
+
+        <Style x:Key="MainTextStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="TextColor" Value="{DynamicResource MainTextColor}"/>
+        </Style>
+
+        <Style x:Key="StandartEntryStyle" TargetType="Entry">
+            <Setter Property="PlaceholderColor" Value="White"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+        
+        <Style x:Key="ToolbarStyle" TargetType="Grid">
+            <Setter Property="HeightRequest" Value="60"/>
+            <Setter Property="ColumnSpacing" Value="0"/>
+        </Style>
     </Application.Resources>
 </Application>

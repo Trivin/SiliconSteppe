@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SiliconStepe.Views.FaqPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ListView HasUnevenRows="True" IsPullToRefreshEnabled="True" RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" ItemsSource="{Binding FaqList}" BackgroundColor="Transparent" ItemTapped="ListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Margin="5,5,5,5" Text="Вопрос:" Style="{DynamicResource MainHeaderStyle}"/>
+                                <Label Margin="5,5,5,5" Text="{Binding Question}" Style="{DynamicResource MainHeaderStyle}" Grid.Row="1" VerticalOptions="Center"/>
+
+                                <Label Margin="5,5,5,5" Style="{DynamicResource MainHeaderStyle}" Text="Ответ:" Grid.Row="2"/>
+                                <Label Margin="5,5,5,5" Text="{Binding Answer}" Style="{DynamicResource MainTextStyle}" Grid.Row="3" VerticalOptions="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

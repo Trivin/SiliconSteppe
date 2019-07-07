@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SiliconStepe.Views.WorkerDetailPageMaster"
+             Title="Master">
+    <StackLayout>
+        <ListView
+              x:Name="MenuItemsListView"
+              SeparatorVisibility="None"
+              HasUnevenRows="true"
+              ItemsSource="{Binding MenuItems}"                  
+              BackgroundColor="White">
+            <ListView.Header>
+                <Grid BackgroundColor="LightBlue">
+                    <!--6a75ab-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+                    <Label
+              Grid.Column="1"
+              Grid.Row="2"
+              Text="{Binding User.FIO}"
+                        Font="Helvetica, 18"
+              TextColor="White"/>
+                    <Grid Grid.Column="1" Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainHeaderStyle}" TextColor="White">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span
+								            Text="&#xf005; ">
+                                            <Span.FontFamily>
+                                                <OnPlatform 
+													Android="fontawesome-webfont.ttf#fontawesome-webfont"
+													iOS="FontAwesome"/>
+                                            </Span.FontFamily>
+                                        </Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label
+              Grid.Column="1"
+              Text="{Binding User.AverageRate}"
+              Font="Helvetica, 12"
+              TextColor="White"/>
+                    </Grid>
+                    <Frame HasShadow="False" Grid.Row="1" Grid.Column="1" HeightRequest="60" WidthRequest="60" CornerRadius="30" HorizontalOptions="Start" VerticalOptions="Start" Margin="0" Padding="0" BackgroundColor="SkyBlue"> <!--32393f -->
+                        <Label FontSize="18" Text="{Binding User.ShortFIO}" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                    </Frame>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10,0,0,0" BackgroundColor="White">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="6.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Margin="0,9,0,5">
+                                <Image WidthRequest="23" HeightRequest="23" Source="{Binding Icon}"/>
+                            </StackLayout>
+                            <Label Margin="0,8,0,5" Grid.Column="1" VerticalOptions="FillAndExpand" 
+                                    VerticalTextAlignment="Center" 
+                                    Text="{Binding Title}" 
+                                    Font="Helvetica" 
+                                       TextColor="#171717" />
+                            <BoxView HeightRequest="0.5" Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" BackgroundColor="#d2d2d2" VerticalOptions="End"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

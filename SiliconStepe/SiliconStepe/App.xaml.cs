@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SiliconStepe.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace SiliconStepe
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
@@ -27,6 +28,12 @@ namespace SiliconStepe
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        public interface IMessage
+        {
+            void LongAlert(string message);
+            void ShortAlert(string message);
         }
     }
 }

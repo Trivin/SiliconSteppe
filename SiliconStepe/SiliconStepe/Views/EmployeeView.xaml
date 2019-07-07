@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SiliconStepe.Views.EmployeeView">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Frame HasShadow="False" HeightRequest="80" WidthRequest="80" CornerRadius="40" HorizontalOptions="Center" VerticalOptions="Center" Margin="0" Padding="0" BackgroundColor="SkyBlue">
+                <Label FontSize="22" Text="{Binding User.ShortFIO}" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            </Frame>
+            <Label
+              Grid.Row="1"
+              Text="{Binding User.FIO}"
+                FontSize="20"
+                Style="{DynamicResource MainTextStyle}"/>
+            <ScrollView Grid.Row="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Style="{DynamicResource MainHeaderStyle}" FontSize="18" Text="О СЕБЕ:"/>
+                    <Label Grid.Row="1" Text="{Binding Description}" Style="{DynamicResource MainTextStyle}" FontSize="16"/>
+                    
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

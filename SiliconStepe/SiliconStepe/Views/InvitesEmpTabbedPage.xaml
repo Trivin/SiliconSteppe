@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SiliconStepe.Views.InvitesEmpTabbedPage">
+  <!--Pages can be added as references or inline-->
+    <ContentPage x:Name="ActiveInvites" Title="Активные обращения">
+        <ListView HasUnevenRows="True" IsPullToRefreshEnabled="True" RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" ItemsSource="{Binding Invites}" BackgroundColor="Transparent" ItemTapped="ListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="10,5,10,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.ColumnSpan="2" BackgroundColor="#44000000">
+                                <Label Style="{DynamicResource MainHeaderStyle}" Text="{Binding Description}" HorizontalOptions="Start" VerticalOptions="Center" TextColor="White" Margin="10,5,10,5"/>
+                            </StackLayout>
+                            <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainHeaderStyle}" Margin="10,0,0,0" Grid.Row="1">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span
+								            Text="&#xf007; ">
+                                                <Span.FontFamily>
+                                                    <OnPlatform 
+													Android="fontawesome-webfont.ttf#fontawesome-webfont"
+													iOS="FontAwesome"/>
+                                                </Span.FontFamily>
+                                            </Span>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainHeaderStyle}" Margin="10,0,0,0" Grid.Row="2">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span
+								            Text="&#xf073; ">
+                                                <Span.FontFamily>
+                                                    <OnPlatform 
+													Android="fontawesome-webfont.ttf#fontawesome-webfont"
+													iOS="FontAwesome"/>
+                                                </Span.FontFamily>
+                                            </Span>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainHeaderStyle}" Margin="10,0,0,0" Grid.Row="3">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span
+								            Text="&#xf005; ">
+                                                <Span.FontFamily>
+                                                    <OnPlatform 
+													Android="fontawesome-webfont.ttf#fontawesome-webfont"
+													iOS="FontAwesome"/>
+                                                </Span.FontFamily>
+                                            </Span>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainHeaderStyle}" Margin="10,0,0,0" Grid.Row="4">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span
+								            Text="&#xf0ac; ">
+                                                <Span.FontFamily>
+                                                    <OnPlatform 
+													Android="fontawesome-webfont.ttf#fontawesome-webfont"
+													iOS="FontAwesome"/>
+                                                </Span.FontFamily>
+                                            </Span>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainTextStyle}" Margin="0,0,10,0" Text="{Binding Worker.FIO}" Grid.Column="1" Grid.Row="1"/>
+                            <Label VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainTextStyle}" Margin="0,0,10,0" Text="{Binding DateTime}" Grid.Column="1" Grid.Row="2"/>
+                            <Label VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainTextStyle}" Margin="0,0,10,0" Text="{Binding Worker.AverageRate}" Grid.Column="1" Grid.Row="3"/>
+                            <Label VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainTextStyle}" Margin="0,0,10,0" Text="{Binding Worker.RateCount}" Grid.Column="1" Grid.Row="4"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+    <ContentPage x:Name="ArchiveInvites" Title="Архивные обращения">
+        <ListView HasUnevenRows="True" IsPullToRefreshEnabled="True" RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" ItemsSource="{Binding Invites}" BackgroundColor="Transparent" ItemTapped="ListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="10,5,10,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.ColumnSpan="2" BackgroundColor="#44000000">
+                                <Label Style="{DynamicResource MainHeaderStyle}" Text="{Binding Description}" HorizontalOptions="Start" VerticalOptions="Center" TextColor="White" Margin="10,5,10,5"/>
+                            </StackLayout>
+                            <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainHeaderStyle}" Margin="10,0,0,0" Grid.Row="1">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span
+								            Text="&#xf007; ">
+                                                <Span.FontFamily>
+                                                    <OnPlatform 
+													Android="fontawesome-webfont.ttf#fontawesome-webfont"
+													iOS="FontAwesome"/>
+                                                </Span.FontFamily>
+                                            </Span>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainHeaderStyle}" Margin="10,0,0,0" Grid.Row="2">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span
+								            Text="&#xf073; ">
+                                                <Span.FontFamily>
+                                                    <OnPlatform 
+													Android="fontawesome-webfont.ttf#fontawesome-webfont"
+													iOS="FontAwesome"/>
+                                                </Span.FontFamily>
+                                            </Span>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainHeaderStyle}" Margin="10,0,0,0" Grid.Row="3">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span
+								            Text="&#xf005; ">
+                                                <Span.FontFamily>
+                                                    <OnPlatform 
+													Android="fontawesome-webfont.ttf#fontawesome-webfont"
+													iOS="FontAwesome"/>
+                                                </Span.FontFamily>
+                                            </Span>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainHeaderStyle}" Margin="10,0,0,0" Grid.Row="4">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <FormattedString.Spans>
+                                            <Span
+								            Text="&#xf0ac; ">
+                                                <Span.FontFamily>
+                                                    <OnPlatform 
+													Android="fontawesome-webfont.ttf#fontawesome-webfont"
+													iOS="FontAwesome"/>
+                                                </Span.FontFamily>
+                                            </Span>
+                                        </FormattedString.Spans>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainTextStyle}" Margin="0,0,10,0" Text="{Binding Worker.FIO}" Grid.Column="1" Grid.Row="1"/>
+                            <Label VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainTextStyle}" Margin="0,0,10,0" Text="{Binding DateTime}" Grid.Column="1" Grid.Row="2"/>
+                            <Label VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainTextStyle}" Margin="0,0,10,0" Text="{Binding Worker.AverageRate}" Grid.Column="1" Grid.Row="3"/>
+                            <Label VerticalOptions="Center" FontSize="14" Style="{DynamicResource MainTextStyle}" Margin="0,0,10,0" Text="{Binding Worker.RateCount}" Grid.Column="1" Grid.Row="4"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+</TabbedPage>

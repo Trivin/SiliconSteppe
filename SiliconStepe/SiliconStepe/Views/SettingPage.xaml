@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customcontrols="clr-namespace:SiliconStepe.CustomControls"
+             x:Class="SiliconStepe.Views.SettingPage"
+             BackgroundColor="{DynamicResource MainPageColor}"
+             xmlns:effects="clr-namespace:Sharpnado.Presentation.Forms.Effects;assembly=Sharpnado.Presentation.Forms">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout>
+                    <Label Margin="15,34,12,6" Text="ОБЩАЯ ИНФОРМАЦИЯ" Style="{DynamicResource MainTextStyle}" FontSize="13" BackgroundColor="Transparent" TextColor="#77767b"/>
+                </StackLayout>
+                <customcontrols:StackLayoutList Grid.Row="1" Spacing="0" x:Name="MainListView" ItemsSource="{Binding .}" BackgroundColor="Transparent">
+                    <customcontrols:StackLayoutList.ItemTemplate>
+                        <DataTemplate>
+                            <Grid BackgroundColor="White" HeightRequest="44" Padding="15,0,15,0" Margin="0,0,0,0"
+                                   effects:TapCommandEffect.Tap="{Binding TapCommand}" 
+                                      effects:TapCommandEffect.TapParameter="{Binding .}"
+                                      effects:ViewEffect.TouchFeedbackColor="{DynamicResource MainButtonColor}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label VerticalOptions="Center" Style="{DynamicResource MainTextStyle}" TextColor="#050505" FontSize="16" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="{Binding Name}"/>
+                                <Label VerticalOptions="Center" Style="{DynamicResource MainTextStyle}" FontSize="16" HorizontalTextAlignment="End" TextColor="#77767b" VerticalTextAlignment="Center" Text="{Binding Value}" Grid.Column="1"/>
+                                <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="16" Style="{DynamicResource MainHeaderStyle}" Margin="10,0,0,0" Grid.Column="2" Grid.RowSpan="2">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span
+								            Text="&#xf044; ">
+                                                    <Span.FontFamily>
+                                                        <OnPlatform 
+													Android="fontawesome-webfont.ttf#fontawesome-webfont"
+													iOS="FontAwesome"/>
+                                                    </Span.FontFamily>
+                                                </Span>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <BoxView HeightRequest="0.5" Grid.ColumnSpan="3" Grid.Row="1" HorizontalOptions="Fill" BackgroundColor="#d2d2d2" VerticalOptions="End"/>
+                            </Grid>
+                        </DataTemplate>
+                    </customcontrols:StackLayoutList.ItemTemplate>
+                </customcontrols:StackLayoutList>
+                <!--<StackLayout  Grid.Row="2">
+                    <Label Margin="10,34,12,6" Text="О СЕБЕ" Style="{DynamicResource MainTextStyle}" FontSize="13" BackgroundColor="Transparent" TextColor="#77767b"/>
+                </StackLayout>
+                <Entry Placeholder="..." Text="{Binding CurrentUser.Description}"/>-->
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
